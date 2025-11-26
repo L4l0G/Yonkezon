@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yonkezon | Repuestos de Auto Usados</title>
+    
+    <!-- Fuentes e Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS - CORREGIDO PARA style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor Personalizado -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>Yonke<span>zon</span></h1>
+        </div>
+        
+        <div class="search-bar-container">
+            <input type="search" id="main-search" placeholder="Busca 'Alternador Civic 2010'...">
+            <button id="search-button" aria-label="Buscar"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <nav class="user-nav">
+            <a href="#" id="account-link">
+                <i class="fas fa-user-circle fa-lg"></i>
+                <span style="font-size: 0.7rem;">Cuenta</span>
+            </a>
+            <a href="#" class="vendor-link" id="vendor-link">
+                <i class="fas fa-tags fa-lg"></i>
+                <span style="font-size: 0.7rem;">Vender</span>
+            </a>
+            <a href="#" class="cart-link" id="cart-link">
+                <div class="icon-wrapper">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-count" class="cart-badge">0</span>
+                </div>
+                <span style="font-size: 0.7rem;">Carrito</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <!-- Sidebar de Filtros -->
+        <aside class="sidebar-filters" id="sidebar-filters">
+            <h2><i class="fas fa-filter"></i> Filtros</h2>
+            
+            <section class="filter-group">
+                <h3>Categoría</h3>
+                <select id="filter-type">
+                    <option value="">Todas las piezas</option>
+                    <option value="motor">Motor y Componentes</option>
+                    <option value="transmision">Transmisión</option>
+                    <option value="carroceria">Carrocería (Puertas, Cofres)</option>
+                    <option value="iluminacion">Iluminación (Faros)</option>
+                    <option value="suspension">Suspensión</option>
+                    <option value="electrico">Sistema Eléctrico</option>
+                    <option value="frenos">Frenos</option>
+                </select>
+            </section>
+
+            <section class="filter-group">
+                <h3>Marca del Auto</h3>
+                <select id="filter-brand">
+                    <option value="">Cualquiera</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                </select>
+            </section>
+
+            <section class="filter-group">
+                <h3>Modelo</h3>
+                <input type="text" id="filter-model" placeholder="Ej: Civic, Corolla...">
+            </section>
+
+            <section class="filter-group year-group">
+                <h3>Año Compatible</h3>
+                <input type="number" id="filter-year-min" placeholder="Desde" min="1990" max="2025">
+                <input type="number" id="filter-year-max" placeholder="Hasta" min="1990" max="2025">
+            </section>
+            
+            <button class="apply-filters-btn" id="apply-filters">
+                <span>Aplicar Filtros</span>
+            </button>
+        </aside>
+
+        <!-- Resultados -->
+        <section class="product-results">
+            <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 1rem;">
+                <div>
+                    <h2 id="results-title">Refacciones Disponibles</h2>
+                    <p id="result-info" class="result-info">Cargando...</p>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Se llenará con JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Carrito -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Tu Carrito</h2>
+                <button id="close-cart" class="close-cart">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Se llenará con JS -->
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button class="checkout-btn">
+                    <i class="fas fa-credit-card"></i> Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript - CORREGIDO PARA App.js -->
+    <script src="App.js"></script>
+</body>
+</html>
