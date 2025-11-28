@@ -734,3 +734,598 @@ a:hover {
         margin-bottom: 5px;
     }
 }
+
+/* ============================================
+    ESTILOS DEL LOGIN (Centrado y Estético)
+============================================ */
+.login-container-wrapper {
+    position: fixed; /* Para que cubra toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque moderno */
+}
+
+.login-card {
+    width: 90%;
+    max-width: 400px; /* Tamaño fijo, contemporáneo */
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-top: 5px solid var(--color-amazon-orange);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.login-title {
+    font-size: 28px;
+    color: var(--color-amazon-dark);
+    margin-bottom: 5px;
+}
+
+.login-title span {
+    color: var(--color-amazon-orange);
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* --- Formulario e Inputs --- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--color-card-border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 0 10px;
+    background-color: #f9f9f9;
+}
+
+.input-group:focus-within {
+    border-color: var(--color-amazon-orange);
+    box-shadow: 0 0 10px rgba(255, 153, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.input-group i {
+    color: #999;
+    margin-right: 10px;
+}
+
+.login-form input {
+    flex-grow: 1;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+/* Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.checkbox-group input {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-amazon-orange);
+}
+
+/* --- Botones --- */
+.login-btn, .register-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de Login (Estilo Primario) */
+.login-btn {
+    background: linear-gradient(135deg, #F7CA18 0%, var(--color-amazon-orange) 100%);
+    color: var(--color-text);
+    box-shadow: 0 4px 15px rgba(247, 202, 24, 0.5);
+    margin-bottom: 15px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, var(--color-amazon-orange) 0%, #e68a00 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(247, 202, 24, 0.8);
+}
+
+/* Botón de Registro (Estilo Secundario, Más sutil) */
+.register-btn {
+    background: #EAEAEA;
+    color: var(--color-amazon-dark);
+    border: 1px solid #C0C0C0;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background: #DDDDDD;
+    transform: translateY(-2px);
+}
+
+/* --- Footer del Login --- */
+.login-footer {
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+.forgot-password {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.forgot-password:hover {
+    color: var(--color-amazon-orange);
+    text-decoration: underline;
+    transform: none; /* Evita la animación de 'a:hover' */
+}
+
+.separator {
+    height: 1px;
+    background-color: var(--color-card-border);
+    margin: 15px 0;
+}
+
+/* ============================================
+    PÁGINA DE SUBIDA DE VENDEDOR (Marketplace)
+============================================ */
+.vendor-submission-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    background-color: var(--color-background); /* Fondo claro para destacar la tarjeta */
+}
+
+.submission-card {
+    width: 100%;
+    max-width: 800px; /* Ancho cómodo para formularios largos */
+    background-color: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease;
+}
+
+.submission-title {
+    font-size: 26px;
+    color: var(--color-amazon-dark);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 3px solid var(--color-amazon-orange);
+    padding-bottom: 10px;
+}
+
+.submission-title i {
+    color: var(--color-amazon-orange);
+}
+
+.submission-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* --- Estilos de Secciones y Agrupaciones --- */
+.vendor-upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--color-amazon-dark);
+    padding-left: 10px;
+    border-left: 5px solid var(--color-amazon-orange);
+}
+
+/* Campos de entrada: consistencia con el estilo de filtros */
+.vendor-upload-form input[type="text"],
+.vendor-upload-form input[type="number"],
+.vendor-upload-form input[type="tel"],
+.vendor-upload-form select,
+.vendor-upload-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--color-card-border);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    margin-top: 10px;
+}
+
+.vendor-upload-form input:focus,
+.vendor-upload-form select:focus,
+.vendor-upload-form textarea:focus {
+    border-color: var(--color-amazon-orange);
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.vendor-upload-form textarea {
+    resize: vertical;
+    font-family: var(--font-stack);
+}
+
+/* Inputs con Icono (Similares a Login) */
+.input-group {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border: 2px solid var(--color-card-border);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+}
+
+.input-group i {
+    color: #999;
+    margin-right: 10px;
+}
+
+.input-group input {
+    border: none !important;
+    background-color: transparent !important;
+    margin: 0 !important;
+}
+
+/* Agrupación de Precio y Stock */
+.price-group {
+    display: flex;
+    gap: 20px;
+}
+.price-input, .stock-input {
+    flex-grow: 1;
+}
+
+/* Agrupación de Detalles del Auto */
+.car-details-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* --- SECCIÓN DE SUBIDA DE FOTOS (Marketplace Style) --- */
+
+.photo-upload-box {
+    border: 3px dashed var(--color-card-border);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+}
+
+.photo-upload-box:hover {
+    border-color: var(--color-amazon-orange);
+    background-color: #fff8f0;
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.2);
+}
+
+.upload-label {
+    display: block;
+    color: #888;
+    cursor: pointer;
+}
+
+.upload-label i {
+    color: var(--color-amazon-orange);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.photo-upload-box:hover .upload-label i {
+    transform: scale(1.1);
+}
+
+.upload-label p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.upload-label span {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.photo-previews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    /* Estilos para las previsualizaciones, se manejarán con JS */
+}
+
+/* --- Botón de Enviar (Primario) --- */
+
+.submit-listing-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #F7CA18 0%, var(--color-amazon-orange) 100%);
+    color: var(--color-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    margin-top: 20px;
+    box-shadow: 0 6px 20px rgba(247, 202, 24, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-listing-btn:hover {
+    background: linear-gradient(135deg, var(--color-amazon-orange) 0%, #e68a00 100%);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(247, 202, 24, 0.8);
+}
+
+.submit-listing-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Adaptabilidad (Responsive) --- */
+
+@media (max-width: 600px) {
+    .price-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .submission-card {
+        padding: 20px;
+    }
+
+    .photo-upload-box {
+        padding: 25px 15px;
+    }
+}
+
+/* ============================================
+   ESTILOS NUEVOS PARA EL CARRITO DIVIDIDO
+============================================ */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.cart-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.cart-modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 950px; /* Más ancho para dos columnas */
+    height: 85vh;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.cart-modal-header {
+    padding: 15px 25px;
+    background: linear-gradient(135deg, var(--color-amazon-dark) 0%, #1a252f 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--color-amazon-orange);
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-cart:hover { color: var(--color-amazon-orange); }
+
+/* CUERPO DEL MODAL (2 COLUMNAS) */
+.cart-modal-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Evita scroll en todo el modal */
+}
+
+/* Columna Izquierda: Lista de Productos */
+.products-section {
+    flex: 1.6; /* 60% del ancho */
+    padding: 20px;
+    border-right: 1px solid #eee;
+    overflow-y: auto; /* Scroll independiente */
+    background-color: white;
+}
+
+.products-section h3, .payment-section h3 {
+    margin-bottom: 15px;
+    color: var(--color-amazon-dark);
+    font-size: 1.2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Items del Carrito */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.cart-item:hover { transform: translateX(5px); border-color: #ddd; }
+.cart-item h4 { font-size: 0.95rem; margin-bottom: 5px; }
+.cart-item p { color: #B12704; font-weight: bold; }
+
+.cart-controls button {
+    background: #ddd;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cart-controls button:hover { background: var(--color-amazon-orange); color: white; }
+.cart-controls span { margin: 0 10px; }
+.btn-trash { background: none !important; color: #cc0000; font-size: 1.1rem; margin-left: 10px; }
+
+/* Columna Derecha: Pago */
+.payment-section {
+    flex: 1; /* 40% del ancho */
+    padding: 20px;
+    background-color: #f4f6f8;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s;
+}
+
+.payment-card:hover { border-color: var(--color-amazon-orange); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.payment-card input { margin-right: 15px; accent-color: var(--color-amazon-orange); transform: scale(1.2); }
+.payment-icon { width: 30px; font-size: 1.4rem; color: #555; margin-right: 10px; text-align: center; }
+
+/* Resumen de Total */
+.cart-summary-box {
+    margin-top: auto; /* Empuja esto al fondo */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.summary-row.total {
+    font-size: 1.3rem;
+    color: #B12704;
+    border-top: 2px dashed #ddd;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #F7CA18 0%, var(--color-amazon-orange) 100%);
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(247, 202, 24, 0.4);
+}
+
+.checkout-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(247, 202, 24, 0.6); }
+
+/* Responsive para el carrito */
+@media (max-width: 768px) {
+    .cart-modal-body { flex-direction: column; }
+    .products-section { border-right: none; border-bottom: 1px solid #eee; flex: none; height: 50%; }
+    .payment-section { flex: none; height: 50%; }
+}
